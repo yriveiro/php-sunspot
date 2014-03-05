@@ -1,0 +1,27 @@
+
+{
+    "name": "yriveiro/php-sunspot",
+    "description": "Solr client for PHP.",
+    "keywords": ["php", "PHP", "Solr", "SolrCloud"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yago Riveiro",
+            "email": "yago.riveiro@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "guzzle/guzzle": "v3.8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "satooshi/php-coveralls": "v0.6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sunspot\\": "src/Sunspot"
+        }
+    }
+}
+
