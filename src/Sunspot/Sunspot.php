@@ -45,7 +45,7 @@ class Sunspot
 			)
 		);
 
-		$options = array_merge($this->options->getHttpOptions() + $query);
+		$options = array_merge($this->options->getHttpOptions(), $query);
 
 		$request = $this->http->get($endpoint, array(), $options);
 
