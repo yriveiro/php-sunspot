@@ -32,9 +32,9 @@ class Sunspot
 		return sprintf('http://%s',	$this->cluster[array_rand($this->cluster)]);
 	}
 
-    /**
-     * Pings Solr to know if is alive.
-     */
+	/**
+	 * Pings Solr to know if is alive.
+	 */
 	public function ping()
 	{
 		$endpoint = sprintf('/%s/admin/ping', $this->options->getContext());

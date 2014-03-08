@@ -69,7 +69,7 @@ class SunspotTest extends PHPUnit_Framework_TestCase
 	public function testGetSchema()
 	{
 		$schema = dirname(__FILE__) . '/../fixtures/schemas/schema-default-4.7.0.xml';
-		
+
 		$sunspot = new Sunspot(array('localhost:8983'));
 		$response = $sunspot->getSchema('collection1');
 
