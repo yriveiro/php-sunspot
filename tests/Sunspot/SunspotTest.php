@@ -51,4 +51,30 @@ class SunspotTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(404, $response->httpStatusCode);
 		$this->assertEquals(1, $response->status);
 	}
+
+	public function testGetSchema()
+	{
+		$schema = dirname(__FILE__) . '/../fixtures/schemas/schema-default-4.7.0.xml';
+
+		$sunspot = new Sunspot(array('localhost:8983'));
+		$response = $sunspot->getSchema('collection1');
+
+		$this->assertStringEqualsFile($schema, $response);
+	}
+
+	public function testGetSchemaNotValidCollection()
+	{
+		$sunspot = new Sunspot(array('localhost:8983'));
+		$response = $sunspot->getSchema('Collection1');
+
+		$this->assertFalse($response);
+	}
+
+	public function testGetSchemaNotValidHost()
+	{
+		$sunspot = new Sunspot(array('localhost:8984'));
+		$response = $sunspot->getSchema('collection1');
+
+		$this->assertFalse($response);
+	}
 }
